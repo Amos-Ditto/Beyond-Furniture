@@ -1,22 +1,20 @@
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 <template>
-  <div class="">
-    <!-- <NuxtWelcome /> -->
-    <h3 class="text-slate-100 text-xl font-normal tracking-wide">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque quo sit nisi laboriosam numquam perferendis exercitationem accusantium qui natus, officiis omnis reiciendis facere saepe quos ducimus delectus sint et voluptate!</h3>
-  </div>
+	<main class="fixed top-0 bottom-0 left-0 right-0 bg-gray-50 flex flex-col">
+		<NuxtPage />
+	</main>
 </template>
 
 <style>
-
 :root {
-  --tw-bg-opacity: 1;
+	--tw-bg-opacity: 1;
+}
+
+html {
+	font-family: "Roboto", Tahoma;
 }
 
 body {
-  @apply box-border bg-dark;
-  /* background-color: rgb(12 12 13/var(--tw-bg-opacity)); */
+	@apply box-border;
 }
-
 </style>
