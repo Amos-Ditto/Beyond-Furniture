@@ -11,7 +11,7 @@
 }
 
 html {
-	font-family: "Roboto", Tahoma;
+	font-family: "Arial", "Roboto", Tahoma;
 }
 
 body {
