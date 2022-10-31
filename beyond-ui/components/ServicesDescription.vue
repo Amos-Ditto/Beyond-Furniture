@@ -1,5 +1,5 @@
 <template>
-	<div class="w-full grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-6 py-4 px-2 sm:px-0">
+	<div class="w-full grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-6 py-2 px-2 sm:px-0">
 		<div class="descriptions flex flex-col gap-y-6">
 			<div class="title">
 				<h3 class="text-2xl tracking-wide font-semibold">Our Services</h3>
