@@ -2,7 +2,10 @@ import presetIcons from "@unocss/preset-icons";
 
 export default defineNuxtConfig({
 	css: ["~/assets/css/tailwind.css"],
-	buildModules: ["@nuxtjs/tailwindcss", "@unocss/nuxt"],
+	buildModules: ["@nuxtjs/tailwindcss", "@unocss/nuxt", "@nuxtjs/color-mode"],
+	coloMode: {
+		classSuffix: "",
+	},
 	app: {
 		head: {
 			charset: "utf-16",
