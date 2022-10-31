@@ -1,12 +1,12 @@
 <script setup lang="ts"></script>
 
 <template>
-	<nav id="nav" class="w-full py-4 px-2 sm:px-[8px] md:[20px] lg:px-[78px] xl:px-[90px] grid grid-cols-8 bg-gray-50 opacity-[0.98]">
+	<nav id="nav" class="w-full py-4 px-2 sm:px-[8px] md:[20px] lg:px-[78px] xl:px-[90px] grid grid-cols-8 bg-gray-50 opacity-[0.95]">
 		<div class="logo col-span-2">
 			<img src="@/assets/Img/Logo/BEYOND-removebg-preview-light.png" alt="logo" />
 		</div>
 		<div class="navbar-dashboard col-span-6 flex items-center justify-end gap-x-16">
-			<div class="search-bar relative flex items-center w-[20rem]">
+			<div class="search-bar relative hidden sm:flex items-center w-[20rem]">
 				<div class="i-mdi-magnify text-lg left-1.5 absolute text-slate-500"></div>
 				<input type="text" name="find" id="find" placeholder="Search for items" />
 				<div class="search-options w-[5rem] flex flex-row items-center absolute right-1 px-1">
@@ -16,8 +16,8 @@
 					</button>
 				</div>
 			</div>
-			<div class="right-navbar flex items-center justify-end gap-x-12">
-				<div class="notification flex flex-row gap-x-6 items-center">
+			<div class="right-navbar flex items-center justify-end gap-x-6 sm:gap-x-12">
+				<div class="notification flex flex-row gap-x-4 sm:gap-x-6 items-center">
 					<div class="cart relative rounded-full items-center flex justify-center hover:bg-gray-100 cursor-pointer p-2">
 						<div class="i-mdi-cart-outline text-xl"></div>
 						<div class="new absolute rounded-full w-2 h-2 bg-orange-500 right-2 top-2"></div>
@@ -45,7 +45,7 @@ nav {
 }
 
 .logo img {
-	@apply w-[8rem];
+	@apply w-[6rem] sm:w-[8rem];
 }
 
 .search-bar input {
