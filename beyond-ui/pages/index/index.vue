@@ -27,7 +27,9 @@
 				<button class="sub-link">Beds</button>
 				<button class="sub-link">Light</button>
 			</div>
-			<div class="list-items-data grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 lg:gap-14 py-2 px-4 sm:px-0">
+			<div
+				class="list-items-data w-full grid grid-flow-col grid-rows-1 sm:grid-flow-row sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-8 lg:gap-14 py-2 px-2 sm:px-0 overflow-x-auto sm:overflow-x-hidden"
+			>
 				<CardsHomeItemCard :bg="'bg-amber-100'">
 					<template #img>
 						<img
@@ -117,6 +119,22 @@
 }
 
 .list-items-data img.list-img {
-	@apply object-contain h-full w-full bg-inherit scale-110;
+	@apply object-contain h-full bg-inherit scale-110  w-[15rem] sm:w-full;
+}
+
+::-webkit-scrollbar {
+	width: 9px;
+	height: 0px;
+}
+::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+	@apply bg-gray-300;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #555;
 }
 </style>

@@ -10,9 +10,15 @@
 	--tw-bg-opacity: 1;
 }
 
-/* html {
-	font-family: "Arial", "Roboto", Tahoma;
-} */
+html {
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: 100%;
+	-webkit-touch-callout: none;
+	-webkit-tap-highlight-color: transparent;
+}
 
 body {
 	@apply box-border;

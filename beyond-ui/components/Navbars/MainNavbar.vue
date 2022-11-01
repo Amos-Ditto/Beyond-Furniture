@@ -3,12 +3,12 @@
 <template>
 	<nav
 		id="nav"
-		class="w-full py-4 px-2 sm:px-[8px] md:[20px] lg:px-[78px] xl:px-[90px] grid grid-cols-8 bg-gray-50 opacity-[0.95] transition-all duration-200 z-40"
+		class="w-full py-4 px-4 sm:px-[8px] md:[20px] lg:px-[78px] xl:px-[90px] grid grid-cols-8 bg-gray-50 opacity-[0.95] transition-all duration-200 z-40"
 	>
 		<div class="logo col-span-2">
 			<img src="@/assets/Img/Logo/BEYOND-removebg-preview-light.png" alt="logo" />
 		</div>
-		<div class="navbar-dashboard col-span-6 flex items-center justify-end gap-x-16">
+		<div class="navbar-dashboard col-span-6 flex items-center justify-end gap-x-4 md:gap-x-16">
 			<div class="search-bar relative hidden sm:flex items-center w-[20rem]">
 				<div class="i-mdi-magnify text-lg left-1.5 absolute text-slate-500"></div>
 				<input type="text" name="find" id="find" placeholder="Search for items" />
@@ -19,7 +19,7 @@
 					</button>
 				</div>
 			</div>
-			<div class="right-navbar flex items-center justify-end gap-x-6 sm:gap-x-12">
+			<div class="right-navbar flex items-center justify-end gap-x-4 md:gap-x-12">
 				<div class="notification flex flex-row gap-x-4 sm:gap-x-6 items-center">
 					<div class="cart relative rounded-full items-center flex justify-center hover:bg-gray-100 cursor-pointer p-2">
 						<div class="i-mdi-cart-outline text-xl"></div>
@@ -48,7 +48,7 @@ nav {
 }
 
 .logo img {
-	@apply w-[6rem] sm:w-[8rem];
+	@apply w-[7rem] sm:w-[8rem];
 }
 
 .search-bar input {
