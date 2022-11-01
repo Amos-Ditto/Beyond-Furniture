@@ -1,6 +1,6 @@
 <script setup lang="ts"></script>
 <template>
-	<main class="fixed top-0 bottom-0 left-0 right-0 bg-gray-50 flex flex-col">
+	<main class="fixed top-0 bottom-0 left-0 right-0 bg-gray-50 flex flex-col overflow-x-hidden">
 		<NuxtPage />
 	</main>
 </template>
@@ -11,6 +11,7 @@
 }
 
 html {
+	font-family: "Roboto", "Arial", Tahoma;
 	font-synthesis: none;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;

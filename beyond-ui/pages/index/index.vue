@@ -19,7 +19,7 @@
 				</div>
 			</div>
 		</header>
-		<section class="w-full flex flex-col py-2 gap-y-6">
+		<section class="w-full flex flex-col py-2 gap-y-10 sm:gap-y-6">
 			<div class="sub-links w-full flex gap-x-3 sm:gap-x-12 justify-center items-center px-3 pt-6 sm:pt-10">
 				<button class="capitalize text-base border-b-2 border-orange-400 px-3 py-1 tracking-wide">All</button>
 				<button class="sub-link">Sofas</button>
@@ -40,14 +40,13 @@
 						/>
 					</template>
 					<template #name class="">
-						<small class="text-start font-semibold text-xl tracking-wide whitespace-pre-line capitalize text-gray-600"
+						<small class="text-center font-semibold text-xl tracking-wide whitespace-pre-line capitalize text-gray-600"
 							>Living couch</small
 						>
 					</template>
 					<template #prices>
-						<div class="prices flex flex-row px-4 items-center justify-between w-full">
-							<small class="text-lg font-light capitalize text-gray-600 italic">price</small>
-							<small class="font-semibold text-base italic tracking-wide text-gray-700">$30</small>
+						<div class="prices flex flex-row px-4 items-center justify-center gap-x-4 w-full">
+							<small class="font-[800] text-lg italic tracking-wide text-gray-800">$30</small>
 						</div>
 					</template>
 				</CardsHomeItemCard>
@@ -60,6 +59,19 @@
 							class="list-img"
 						/>
 					</template>
+					<template #name class="">
+						<small class="text-center font-semibold text-xl tracking-wide whitespace-pre-line capitalize text-gray-600"
+							>Natuzi chair</small
+						>
+					</template>
+					<template #prices>
+						<div class="prices flex flex-row px-4 items-center justify-center gap-x-4 w-full">
+							<small class="font-[800] text-lg italic tracking-wide text-gray-800">$30</small>
+							<small class="font-[800] text-lg italic tracking-wide text-gray-500 line-through decoration-gray-500"
+								>$40</small
+							>
+						</div>
+					</template>
 				</CardsHomeItemCard>
 				<CardsHomeItemCard :bg="'bg-indigo-100'">
 					<template #img>
@@ -69,6 +81,19 @@
 							alt="chair"
 							class="list-img"
 						/>
+					</template>
+					<template #name class="">
+						<small class="text-center font-semibold text-xl tracking-wide whitespace-pre-line capitalize text-gray-600"
+							>3 seat sofa</small
+						>
+					</template>
+					<template #prices>
+						<div class="prices flex flex-row px-4 items-center justify-center gap-x-4 w-full">
+							<small class="font-[800] text-lg italic tracking-wide text-gray-800">$50</small>
+							<small class="font-[800] text-lg italic tracking-wide text-gray-500 line-through decoration-gray-500"
+								>$60</small
+							>
+						</div>
 					</template>
 				</CardsHomeItemCard>
 				<CardsHomeItemCard :bg="'bg-cyan-100'">
@@ -80,6 +105,19 @@
 							loading="lazy"
 						/>
 					</template>
+					<template #name class="">
+						<small class="text-center font-semibold text-xl tracking-wide whitespace-pre-line capitalize text-gray-600"
+							>Wing chair</small
+						>
+					</template>
+					<template #prices>
+						<div class="prices flex flex-row px-4 items-center justify-center gap-x-4 w-full">
+							<small class="font-[800] text-lg italic tracking-wide text-gray-800">$30</small>
+							<small class="font-[800] text-lg italic tracking-wide text-gray-500 line-through decoration-gray-500"
+								>$40</small
+							>
+						</div>
+					</template>
 				</CardsHomeItemCard>
 				<CardsHomeItemCard :bg="'bg-indigo-100'">
 					<template #img>
@@ -90,6 +128,19 @@
 							class="list-img"
 						/>
 					</template>
+					<template #name class="">
+						<small class="text-center font-semibold text-xl tracking-wide whitespace-pre-line capitalize text-gray-600"
+							>couch relax</small
+						>
+					</template>
+					<template #prices>
+						<div class="prices flex flex-row px-4 items-center justify-center gap-x-4 w-full">
+							<small class="font-[800] text-lg italic tracking-wide text-gray-800">$30</small>
+							<small class="font-[800] text-lg italic tracking-wide text-gray-500 line-through decoration-gray-500"
+								>$40</small
+							>
+						</div>
+					</template>
 				</CardsHomeItemCard>
 				<CardsHomeItemCard :bg="'bg-amber-100'">
 					<template #img>
@@ -99,6 +150,19 @@
 							class="list-img"
 							loading="lazy"
 						/>
+					</template>
+					<template #name class="">
+						<small class="text-center font-semibold text-xl tracking-wide whitespace-pre-line capitalize text-gray-600"
+							>xl bed</small
+						>
+					</template>
+					<template #prices>
+						<div class="prices flex flex-row px-4 items-center justify-center gap-x-4 w-full">
+							<small class="font-[800] text-lg italic tracking-wide text-gray-800">$70</small>
+							<small class="font-[800] text-lg italic tracking-wide text-gray-500 line-through decoration-gray-500"
+								>$80</small
+							>
+						</div>
 					</template>
 				</CardsHomeItemCard>
 			</div>
@@ -119,7 +183,7 @@
 }
 
 .list-items-data img.list-img {
-	@apply object-contain h-full bg-inherit scale-110  w-[15rem] sm:w-full;
+	@apply object-contain h-[10rem] bg-inherit scale-110  w-[15rem] sm:w-full;
 }
 
 ::-webkit-scrollbar {

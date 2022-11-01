@@ -5,13 +5,22 @@ defineProps<{
 </script>
 
 <template>
-	<div class="item flex flex-col rounded-md px-2 py-3 gap-y-3 h-[24rem] sm:h-[22rem] w-[15rem] sm:w-auto" :class="bg">
+	<div class="item flex flex-col rounded-md px-2 py-3 gap-y-4 h-[24rem] sm:h-[22rem] w-[15rem] sm:w-auto" :class="bg">
 		<div class="item-image w-full h-[75%] sm:h-[60%] flex items-center justify-center">
 			<slot name="img"></slot>
 		</div>
-		<div class="item-details grid grid-cols-2 gap-x-3 py-3">
-			<slot name="name"></slot>
-			<slot name="prices"></slot>
+		<div class="item-body flex flex-col items-center w-full gap-y-2">
+			<div class="item-details grid grid-cols-1 gap-y-2 py-3">
+				<slot name="name"></slot>
+				<slot name="prices"></slot>
+			</div>
+			<div class="add-cart w-full flex flex-col items-center">
+				<button
+					class="text-base tracking-wide w-full text-gray-100 font-bold capitalize bg-orange-400 rounded-sm hover:bg-orange-500 transition-colors duration-200 py-2 px-4"
+				>
+					add cart
+				</button>
+			</div>
 		</div>
 	</div>
 </template>
