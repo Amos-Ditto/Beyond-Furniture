@@ -11,7 +11,7 @@
 		<div class="navbar-dashboard col-span-6 flex items-center justify-end gap-x-4 md:gap-x-16">
 			<div class="search-bar relative hidden sm:flex items-center w-[20rem]">
 				<div class="i-mdi-magnify text-lg left-1.5 absolute text-slate-500"></div>
-				<input type="text" name="find" id="find" placeholder="Search for items" />
+				<input type="search" name="find" id="find" placeholder="Search for items" />
 				<div class="search-options w-[5rem] flex flex-row items-center absolute right-1 px-1">
 					<button class="relative flex items-center justify-start py-1 px-3 w-full bg-gray-50 rounded-lg">
 						<small class="tracking-wide text-base capitalize font-light text-slate-600">by</small>

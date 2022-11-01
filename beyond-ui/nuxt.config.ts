@@ -18,4 +18,8 @@ export default defineNuxtConfig({
 		icons: true,
 		presets: [presetIcons({})],
 	},
+	// router: {
+	// 	linkActiveClass: "active-link",
+	// 	linkExactActiveClass: "exact-active-link",
+	// },
 });
