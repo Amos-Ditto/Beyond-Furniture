@@ -6,9 +6,7 @@
 
 @font-face {
 	font-family: "Roboto";
-	src: url("Roboto-ThinItalic-webfont.eot");
-	src: url("Roboto-ThinItalic-webfont.eot?#iefix") format("embedded-opentype"), url("Roboto-ThinItalic-webfont.woff") format("woff"),
-		url("Roboto-ThinItalic-webfont.ttf") format("truetype"), url("Roboto-ThinItalic-webfont.svg#RobotoThinItalic") format("svg");
+	src: url("../fonts/Roboto-Regular.ttf") format("truetype");
 	font-weight: 200;
 	/* font-style: italic; */
 }

@@ -31,20 +31,28 @@
 				<CardsHomeItemCard :bg="'bg-amber-100'">
 					<template #img>
 						<img
+							loading="lazy"
 							src="@/assets/Furnitures/phillip-goldsberry-fZuleEfeA1Q-unsplash-removebg-preview.png"
 							alt="chair"
 							class="list-img"
 						/>
 					</template>
-					<template #details class="grid grid-cols-2 py-4">
-						<div class="name text-start">
-							<small class="text-start font-semibold text-base tracking-wide capitalize text-gray-600">Living couch</small>
+					<template #name class="">
+						<small class="text-start font-semibold text-xl tracking-wide whitespace-pre-line capitalize text-gray-600"
+							>Living couch</small
+						>
+					</template>
+					<template #prices>
+						<div class="prices flex flex-row px-4 items-center justify-between w-full">
+							<small class="text-lg font-light capitalize text-gray-600 italic">price</small>
+							<small class="font-semibold text-base italic tracking-wide text-gray-700">$30</small>
 						</div>
 					</template>
 				</CardsHomeItemCard>
 				<CardsHomeItemCard :bg="'bg-cyan-100'">
 					<template #img>
 						<img
+							loading="lazy"
 							src="@/assets/Furnitures/marlon-corona-1tMc27CFUbA-unsplash-removebg-preview.png"
 							alt="chair"
 							class="list-img"
@@ -54,6 +62,7 @@
 				<CardsHomeItemCard :bg="'bg-indigo-100'">
 					<template #img>
 						<img
+							loading="lazy"
 							src="@/assets/Furnitures/nathan-fertig-FBXuXp57eM0-unsplash-removebg-preview.png"
 							alt="chair"
 							class="list-img"
@@ -62,12 +71,18 @@
 				</CardsHomeItemCard>
 				<CardsHomeItemCard :bg="'bg-cyan-100'">
 					<template #img>
-						<img src="@/assets/Furnitures/kari-shea-ItMggD0EguY-unsplash-removebg-preview.png" alt="chair" class="list-img" />
+						<img
+							src="@/assets/Furnitures/kari-shea-ItMggD0EguY-unsplash-removebg-preview.png"
+							alt="chair"
+							class="list-img"
+							loading="lazy"
+						/>
 					</template>
 				</CardsHomeItemCard>
 				<CardsHomeItemCard :bg="'bg-indigo-100'">
 					<template #img>
 						<img
+							loading="lazy"
 							src="@/assets/Furnitures/daniil-silantev-1P6AnKDw6S8-unsplash-removebg-preview.png"
 							alt="chair"
 							class="list-img"
@@ -76,7 +91,12 @@
 				</CardsHomeItemCard>
 				<CardsHomeItemCard :bg="'bg-amber-100'">
 					<template #img>
-						<img src="@/assets/Furnitures/erik-mclean-Ij9nIghkI6k-unsplash-removebg-preview.png" alt="chair" class="list-img" />
+						<img
+							src="@/assets/Furnitures/erik-mclean-Ij9nIghkI6k-unsplash-removebg-preview.png"
+							alt="chair"
+							class="list-img"
+							loading="lazy"
+						/>
 					</template>
 				</CardsHomeItemCard>
 			</div>
@@ -97,6 +117,6 @@
 }
 
 .list-items-data img.list-img {
-	@apply object-contain h-full w-full bg-inherit;
+	@apply object-contain h-full w-full bg-inherit scale-110;
 }
 </style>

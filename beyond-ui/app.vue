@@ -10,9 +10,9 @@
 	--tw-bg-opacity: 1;
 }
 
-html {
+/* html {
 	font-family: "Arial", "Roboto", Tahoma;
-}
+} */
 
 body {
 	@apply box-border;

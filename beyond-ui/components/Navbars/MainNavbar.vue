@@ -3,7 +3,7 @@
 <template>
 	<nav
 		id="nav"
-		class="w-full py-4 px-2 sm:px-[8px] md:[20px] lg:px-[78px] xl:px-[90px] grid grid-cols-8 bg-gray-50 opacity-[0.95] transition-all duration-200"
+		class="w-full py-4 px-2 sm:px-[8px] md:[20px] lg:px-[78px] xl:px-[90px] grid grid-cols-8 bg-gray-50 opacity-[0.95] transition-all duration-200 z-40"
 	>
 		<div class="logo col-span-2">
 			<img src="@/assets/Img/Logo/BEYOND-removebg-preview-light.png" alt="logo" />
@@ -33,7 +33,7 @@
 					</div>
 				</div>
 				<div class="user">
-					<div class="icon">
+					<div class="icon cursor-pointer">
 						<img src="@/assets/Img/profile-min.svg" alt="avatar" class="w-9 h-9 bg-orange-200 rounded-full" />
 					</div>
 				</div>
