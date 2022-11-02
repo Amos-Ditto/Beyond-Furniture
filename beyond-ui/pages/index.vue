@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const router = useRouter();
 
-console.log(router.currentRoute.value);
+// console.log(router.currentRoute.value);
 </script>
 <template>
 	<NuxtLayout>
