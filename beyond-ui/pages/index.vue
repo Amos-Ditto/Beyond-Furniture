@@ -1,7 +1,20 @@
 <script setup lang="ts">
+import { OverviewItems } from "@/Types/common";
+
 const router = useRouter();
 
-// console.log(router.currentRoute.value);
+const overviewitems = ref<OverviewItems[]>([
+	{ Name: "all", id: 0 },
+	{ Name: "Sofas", id: 1 },
+	{ Name: "Chairs", id: 2 },
+	{ Name: "Beds", id: 3 },
+	{ Name: "Light", id: 4 },
+]);
+const activeitemid = ref<number>(0);
+
+const selectOverviewItem = (item: OverviewItems): void => {
+	activeitemid.value = item.id;
+};
 </script>
 <template>
 	<NuxtLayout>
@@ -27,13 +40,15 @@ const router = useRouter();
 			</header>
 			<section class="w-full flex flex-col py-2 gap-y-10 sm:gap-y-6">
 				<div class="sub-links w-full flex gap-x-3 sm:gap-x-12 justify-center items-center px-3 pt-6 sm:pt-10">
-					<RouterLink to="/" class="capitalize text-base border-b-2 px-2.5 sm:px-3 py-1 border-orange-400 text-inherit" exact
-						>All</RouterLink
+					<button
+						class="sub-link"
+						:class="activeitemid === item.id ? 'border-orange-400 text-inherit' : 'border-transparent text-gray-600'"
+						v-for="item in overviewitems"
+						:key="item.id"
+						@click="selectOverviewItem(item)"
 					>
-					<RouterLink to="/sofas" class="sub-link">Sofas</RouterLink>
-					<RouterLink to="/sofas" class="sub-link">Chairs</RouterLink>
-					<RouterLink to="/sofas" class="sub-link">Beds</RouterLink>
-					<RouterLink to="/sofas" class="sub-link">Light</RouterLink>
+						{{ item.Name }}
+					</button>
 				</div>
 				<NuxtPage />
 			</section>
@@ -46,14 +61,10 @@ const router = useRouter();
 
 <style scoped>
 .sub-links .sub-link {
-	@apply capitalize text-base border-b-2 border-transparent px-2.5 sm:px-3 py-1 text-gray-600 tracking-wide hover:border-orange-400 hover:text-inherit transition-colors duration-200;
+	@apply capitalize text-base border-b-2 px-2.5 sm:px-3 py-1 tracking-wide hover:border-orange-400 hover:text-inherit transition-colors duration-200;
 }
 
 .categories .link button:hover .i-mdi-arrow-right {
 	@apply translate-x-1;
-}
-
-.nuxt-link-exact-active {
-	@apply border-orange-400 text-inherit border-t;
 }
 </style>

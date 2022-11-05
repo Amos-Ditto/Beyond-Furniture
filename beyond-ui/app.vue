@@ -1,6 +1,10 @@
 <script setup lang="ts"></script>
 <template>
 	<main class="fixed top-0 bottom-0 left-0 right-0 bg-gray-50 flex flex-col overflow-x-hidden">
+		<NuxtLoadingIndicator
+			color="repeating-linear-gradient(to right,rgb(253 186 116 / 1) 0%,rgb(249 115 22 / 1) 50%,rgb(251 146 60 /1) 100%)"
+			class="bg-orange-300"
+		/>
 		<NuxtPage />
 	</main>
 </template>

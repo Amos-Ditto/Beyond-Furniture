@@ -45,7 +45,7 @@
 			</div>
 		</div>
 		<div class="img-description">
-			<img src="@/assets/Img/Bg/dwi-agus-prasetiyo-04jcazTIYCQ-unsplash_Compressmyimage.com.jpg" alt="image" loading="lazy" />
+			<img src="@/assets/Img/Bg/dwi-agus-prasetiyo-04jcazTIYCQ-u.jpg" alt="image" />
 		</div>
 	</div>
 </template>
