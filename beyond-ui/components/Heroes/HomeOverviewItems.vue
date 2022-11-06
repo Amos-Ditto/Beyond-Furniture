@@ -130,7 +130,7 @@
 
 <style scoped>
 .list-items-data img.list-img {
-	@apply object-contain h-[10rem] bg-inherit scale-110  w-[15rem] sm:w-full;
+	@apply object-contain h-[10rem] bg-inherit scale-110  w-[15rem] sm:w-full hover:scale-125 transition-transform duration-300 cursor-pointer;
 }
 
 ::-webkit-scrollbar {

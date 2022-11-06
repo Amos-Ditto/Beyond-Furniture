@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { OverviewItems } from "@/Types/common";
 
+const router = useRouter();
+
 const overviewitems = ref<OverviewItems[]>([
 	{ Name: "all", id: 0 },
 	{ Name: "Sofas", id: 1 },
@@ -29,7 +31,7 @@ const selectOverviewItem = (item: OverviewItems): void => {
 </script>
 <template>
 	<NuxtLayout>
-		<section class="w-full px-2 sm:px-4 md:px-12 lg:px-28 xl:px-52 flex flex-col gap-y-3 transition-all duration-200">
+		<section class="w-full px-2 sm:px-4 md:px-12 lg:px-24 xl:px-48 2xl:px-52 flex flex-col gap-y-3 transition-all duration-200">
 			<header class="flex flex-row justify-between w-full px-4 sm:px-0 pt-8">
 				<h3 class="text-3xl font-bold text-gray-800 uppercase">Products</h3>
 				<div class="categories hidden sm:grid grid-cols-3 gap-x-3 w-[70%]">
@@ -41,6 +43,7 @@ const selectOverviewItem = (item: OverviewItems): void => {
 					</div>
 					<div class="link flex items-center justify-end">
 						<button
+							@click="router.push('/dashboard')"
 							class="bg-orange-400 rounded flex flex-row gap-x-2 text-slate-100 tracking-wide items-center justify-center px-4 py-1.5 hover:bg-orange-500 transition-colors duration-200"
 						>
 							See all
