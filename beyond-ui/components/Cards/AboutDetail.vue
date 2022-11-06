@@ -1,5 +1,5 @@
 <template>
-	<div class="w-full flex flex-col gap-y-1.5">
+	<div class="description w-full flex flex-col gap-y-1.5">
 		<div class="icon flex flex-row justify-start items-center">
 			<slot name="icon"></slot>
 		</div>

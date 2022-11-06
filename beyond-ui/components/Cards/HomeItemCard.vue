@@ -3,6 +3,7 @@ defineProps<{
 	bg: string;
 }>();
 
+const itemref = ref<Element>(null);
 const loaded = ref<boolean>(false);
 
 onMounted(() => {
@@ -14,16 +15,17 @@ onMounted(() => {
 			}
 		},
 		{
-			threshold: 0.25,
+			threshold: 0.35,
 		}
 	);
 
-	itemObs.observe(document.querySelector(".item"));
+	itemObs.observe(itemref.value);
 });
 </script>
 
 <template>
 	<div
+		ref="itemref"
 		class="item flex flex-col rounded-md px-2 py-3 gap-y-4 h-[24rem] sm:h-[22rem] w-[15rem] sm:w-auto transition-all duration-500"
 		:class="bg"
 		v-bind:class="loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'"

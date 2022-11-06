@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const descriptions = ref<Element>(null);
+const imgdescription = ref<Element>(null);
 const loadedservices = ref<boolean>(false);
 const loadedimg = ref<boolean>(false);
 
@@ -26,15 +28,16 @@ onMounted(() => {
 		}
 	);
 
-	servicesObs.observe(document.querySelector(".descriptions"));
-	imgObs.observe(document.querySelector(".img-description"));
+	servicesObs.observe(descriptions.value);
+	imgObs.observe(imgdescription.value);
 });
 </script>
 <template>
 	<div class="services-description w-full grid grid-cols-1 md:grid-cols-2 grid-rows-1 gap-x-4 gap-y-6 py-2 px-2 sm:px-0">
 		<div
+			ref="descriptions"
 			class="descriptions flex flex-col gap-y-6 transition-all duration-500"
-			:class="loadedservices ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'"
+			:class="loadedservices ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-7'"
 		>
 			<div class="title">
 				<h3 class="text-2xl tracking-wide font-semibold">Our Services</h3>
@@ -79,8 +82,9 @@ onMounted(() => {
 			</div>
 		</div>
 		<div
+			ref="imgdescription"
 			class="img-description w-full relative flex flex-col items-center justify-center transition-all duration-500"
-			:class="loadedimg ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'"
+			:class="loadedimg ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-7'"
 		>
 			<img src="@/assets/Img/Bg/carpenter.webp" alt="image" />
 		</div>
