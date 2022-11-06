@@ -2,10 +2,32 @@
 defineProps<{
 	bg: string;
 }>();
+
+const loaded = ref<boolean>(false);
+
+onMounted(() => {
+	const itemObs = new IntersectionObserver(
+		(entry) => {
+			if (entry[0].isIntersecting) {
+				loaded.value = true;
+				itemObs.unobserve(entry[0].target);
+			}
+		},
+		{
+			threshold: 0.25,
+		}
+	);
+
+	itemObs.observe(document.querySelector(".item"));
+});
 </script>
 
 <template>
-	<div class="item flex flex-col rounded-md px-2 py-3 gap-y-4 h-[24rem] sm:h-[22rem] w-[15rem] sm:w-auto" :class="bg">
+	<div
+		class="item flex flex-col rounded-md px-2 py-3 gap-y-4 h-[24rem] sm:h-[22rem] w-[15rem] sm:w-auto transition-all duration-500"
+		:class="bg"
+		v-bind:class="loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'"
+	>
 		<div class="item-image w-full h-[75%] sm:h-[60%] flex items-center justify-center">
 			<slot name="img"></slot>
 		</div>

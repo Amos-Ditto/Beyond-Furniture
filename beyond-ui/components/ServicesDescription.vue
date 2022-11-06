@@ -1,7 +1,41 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const loadedservices = ref<boolean>(false);
+const loadedimg = ref<boolean>(false);
+
+onMounted(() => {
+	const servicesObs = new IntersectionObserver(
+		(entry) => {
+			if (entry[0].isIntersecting) {
+				loadedservices.value = true;
+				servicesObs.unobserve(entry[0].target);
+			}
+		},
+		{
+			threshold: 0.3,
+		}
+	);
+	const imgObs = new IntersectionObserver(
+		(entry) => {
+			if (entry[0].isIntersecting) {
+				loadedimg.value = true;
+				imgObs.unobserve(entry[0].target);
+			}
+		},
+		{
+			threshold: 0.3,
+		}
+	);
+
+	servicesObs.observe(document.querySelector(".descriptions"));
+	imgObs.observe(document.querySelector(".img-description"));
+});
+</script>
 <template>
 	<div class="services-description w-full grid grid-cols-1 md:grid-cols-2 grid-rows-1 gap-x-4 gap-y-6 py-2 px-2 sm:px-0">
-		<div class="descriptions flex flex-col gap-y-6">
+		<div
+			class="descriptions flex flex-col gap-y-6 transition-all duration-500"
+			:class="loadedservices ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'"
+		>
 			<div class="title">
 				<h3 class="text-2xl tracking-wide font-semibold">Our Services</h3>
 			</div>
@@ -44,7 +78,10 @@
 				</CardsAboutDetail>
 			</div>
 		</div>
-		<div class="img-description w-full relative flex flex-col items-center justify-center">
+		<div
+			class="img-description w-full relative flex flex-col items-center justify-center transition-all duration-500"
+			:class="loadedimg ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'"
+		>
 			<img src="@/assets/Img/Bg/carpenter.webp" alt="image" />
 		</div>
 	</div>

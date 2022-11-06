@@ -134,7 +134,7 @@
 }
 
 ::-webkit-scrollbar {
-	width: 9px;
+	width: 0px;
 	height: 0px;
 }
 ::-webkit-scrollbar-track {

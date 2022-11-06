@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { OverviewItems } from "@/Types/common";
 
-const router = useRouter();
-
 const overviewitems = ref<OverviewItems[]>([
 	{ Name: "all", id: 0 },
 	{ Name: "Sofas", id: 1 },
@@ -11,9 +9,22 @@ const overviewitems = ref<OverviewItems[]>([
 	{ Name: "Light", id: 4 },
 ]);
 const activeitemid = ref<number>(0);
+const loadingitems = ref<boolean>(false);
+
+const onCreatedLoadItems = (): void => {
+	loadingitems.value = true;
+	setTimeout(() => {
+		loadingitems.value = false;
+	}, 800);
+};
+onCreatedLoadItems();
 
 const selectOverviewItem = (item: OverviewItems): void => {
+	loadingitems.value = true;
 	activeitemid.value = item.id;
+	setTimeout(() => {
+		loadingitems.value = false;
+	}, 800);
 };
 </script>
 <template>
@@ -51,7 +62,20 @@ const selectOverviewItem = (item: OverviewItems): void => {
 					</button>
 				</div>
 				<div class="hero-items w-full flex flex-col">
-					<HeroesHomeOverviewItems />
+					<Transition mode="out-in">
+						<div
+							v-if="loadingitems"
+							class="list-suspense-data w-full grid grid-flow-col grid-rows-1 sm:grid-flow-row sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-8 lg:gap-14 py-2 px-2 sm:px-0 overflow-x-auto sm:overflow-x-hidden"
+						>
+							<SuspensesOverviewItemSuspense />
+							<SuspensesOverviewItemSuspense />
+							<SuspensesOverviewItemSuspense />
+							<SuspensesOverviewItemSuspense />
+							<SuspensesOverviewItemSuspense />
+							<SuspensesOverviewItemSuspense />
+						</div>
+						<HeroesHomeOverviewItems v-else />
+					</Transition>
 				</div>
 			</section>
 			<section class="w-full flex flex-col pt-8 pb-12">
@@ -68,5 +92,35 @@ const selectOverviewItem = (item: OverviewItems): void => {
 
 .categories .link button:hover .i-mdi-arrow-right {
 	@apply translate-x-1;
+}
+
+.hero-items::-webkit-scrollbar {
+	width: 0px;
+	height: 0px;
+}
+.hero-items::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+/* Handle */
+.hero-items::-webkit-scrollbar-thumb {
+	@apply bg-gray-300;
+}
+/* Handle on hover */
+.hero-items::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}
+
+.list-suspense-data::-webkit-scrollbar {
+	width: 0px;
+	height: 0px;
+}
+.list-suspense-data::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+.list-suspense-data::-webkit-scrollbar-thumb {
+	@apply bg-gray-300;
+}
+.list-suspense-data::-webkit-scrollbar-thumb:hover {
+	background: #555;
 }
 </style>

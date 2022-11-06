@@ -9,12 +9,14 @@
 			<img src="@/assets/Img/Logo/BEYOND-removebg-preview-light.png" alt="logo" />
 		</div>
 		<div class="navbar-dashboard col-span-6 flex items-center justify-end gap-x-4 md:gap-x-16">
-			<div class="search-bar relative hidden sm:flex items-center w-[20rem]">
-				<div class="i-mdi-magnify text-lg left-1.5 absolute text-slate-500"></div>
+			<div class="search-bar relative hidden sm:flex items-center w-[24rem]">
+				<div class="i-mdi-magnify text-lg left-2 absolute text-slate-500"></div>
 				<input type="search" name="find" id="find" placeholder="Search for items" />
-				<div class="search-options w-[5rem] flex flex-row items-center absolute right-1 px-1">
-					<button class="relative flex items-center justify-start py-1 px-3 w-full bg-gray-50 rounded-lg">
-						<small class="tracking-wide text-base capitalize font-light text-slate-600">by</small>
+				<div class="search-options w-[25%] flex flex-row items-center absolute right-1 px-1">
+					<button
+						class="relative flex items-center justify-start py-2 px-3 w-full bg-gray-50 rounded-lg border border-transparent hover:border-gray-200"
+					>
+						<small class="tracking-wide text-xs truncate capitalize font-light text-slate-600">All categories</small>
 						<div class="i-mdi-chevron-down text-base text-slate-600 absolute right-1"></div>
 					</button>
 				</div>
@@ -52,6 +54,6 @@ nav {
 }
 
 .search-bar input {
-	@apply py-2 pl-7 pr-24 bg-gray-100 rounded-md w-full text-base tracking-wide outline-none border border-gray-200 focus:border-gray-300 transition-colors duration-200;
+	@apply py-2 pl-7 pr-28 bg-gray-100 rounded-md w-full text-base text-gray-600 tracking-wide outline-none border border-gray-200 focus:border-gray-300 transition-colors duration-200;
 }
 </style>
