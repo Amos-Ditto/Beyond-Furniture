@@ -39,7 +39,7 @@ const selectOverviewItem = (item: OverviewItems): void => {
 				</div>
 			</header>
 			<section class="w-full flex flex-col py-2 gap-y-10 sm:gap-y-6">
-				<div class="sub-links w-full flex gap-x-3 sm:gap-x-12 justify-center items-center px-3 pt-6 sm:pt-10">
+				<div class="sub-links w-full flex gap-x-3 sm:gap-x-12 justify-start sm:justify-center items-center px-3 pt-6 sm:pt-10">
 					<button
 						class="sub-link"
 						:class="activeitemid === item.id ? 'border-orange-400 text-inherit' : 'border-transparent text-gray-600'"
@@ -50,7 +50,9 @@ const selectOverviewItem = (item: OverviewItems): void => {
 						{{ item.Name }}
 					</button>
 				</div>
-				<NuxtPage />
+				<div class="hero-items w-full flex flex-col">
+					<HeroesHomeOverviewItems />
+				</div>
 			</section>
 			<section class="w-full flex flex-col pt-8 pb-12">
 				<ServicesDescription />

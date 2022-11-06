@@ -1,6 +1,6 @@
 <script setup lang="ts"></script>
 <template>
-	<div class="services-description w-full grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-6 py-2 px-2 sm:px-0">
+	<div class="services-description w-full grid grid-cols-1 md:grid-cols-2 grid-rows-1 gap-x-4 gap-y-6 py-2 px-2 sm:px-0">
 		<div class="descriptions flex flex-col gap-y-6">
 			<div class="title">
 				<h3 class="text-2xl tracking-wide font-semibold">Our Services</h3>
@@ -44,14 +44,14 @@
 				</CardsAboutDetail>
 			</div>
 		</div>
-		<div class="img-description">
-			<img src="@/assets/Img/Bg/dwi-agus-prasetiyo-04jcazTIYCQ-u.jpg" alt="image" />
+		<div class="img-description w-full relative flex flex-col items-center justify-center">
+			<img src="@/assets/Img/Bg/carpenter.webp" alt="image" />
 		</div>
 	</div>
 </template>
 
 <style scoped>
 .img-description img {
-	@apply object-cover rounded h-[16rem] md:h-[24rem] w-full;
+	@apply rounded max-h-full min-h-full min-w-full max-w-full object-center;
 }
 </style>
