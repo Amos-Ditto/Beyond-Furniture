@@ -40,7 +40,7 @@ onMounted(() => {
 			</div>
 			<div class="add-cart w-full flex flex-col items-center">
 				<button
-					class="text-base tracking-wide w-full text-gray-100 font-bold capitalize bg-orange-400 rounded-sm hover:bg-orange-500 transition-colors duration-200 py-2 px-4"
+					class="text-base tracking-wide w-full text-gray-100 font-bold capitalize bg-orange-300 rounded-sm hover:bg-orange-400 transition-colors duration-200 py-2 px-4"
 				>
 					add cart
 				</button>

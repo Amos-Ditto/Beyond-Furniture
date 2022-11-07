@@ -2,7 +2,7 @@
 	<NuxtLayout name="dashboard">
 		<section class="w-full flex flex-col gap-y-3">
 			<header
-				class="dashboard-status w-full h-[3.5rem] py-2 flex flex-row items-center justify-start gap-x-3 bg-gray-200 px-2 sm:px-4 md:px-12 lg:px-24 xl:px-36 2xl:px-40 transition-all duration-200"
+				class="dashboard-status w-full h-[3rem] sm:h-[3.5rem] py-2 flex flex-row items-center justify-start gap-x-3 bg-gray-200 px-2 sm:px-4 md:px-12 lg:px-24 xl:px-36 2xl:px-40 transition-all duration-200"
 			>
 				<small>home</small>
 				<small>></small>
@@ -19,6 +19,6 @@
 
 <style scoped>
 .dashboard-status small {
-	@apply capitalize tracking-wide text-base text-gray-600;
+	@apply capitalize tracking-wide text-sm sm:text-base text-gray-600;
 }
 </style>
