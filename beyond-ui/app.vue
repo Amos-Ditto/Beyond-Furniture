@@ -35,8 +35,10 @@ body {
 .page-leave-active {
 	transition: all 0.3s;
 }
-.page-enter-from,
+.page-enter-from {
+	@apply opacity-0 -translate-y-0.5 overflow-y-hidden;
+}
 .page-leave-to {
-	@apply opacity-0 translate-y-1;
+	@apply opacity-0;
 }
 </style>
