@@ -10,7 +10,7 @@
 		</RouterLink>
 		<div class="navbar-dashboard col-span-6 flex items-center justify-end gap-x-4 md:gap-x-12 lg:gap-x-16 transition duration-200">
 			<div
-				class="search-bar relative hidden sm:grid grid-cols-10 items-center w-[20rem] md:w-[25rem] bg-gray-100 rounded border border-gray-200 hover:border-gray-300 focus-within:border-gray-300 transition duration-200"
+				class="search-bar relative hidden sm:grid grid-cols-10 items-center w-[20rem] md:w-[25rem] bg-gray-100 rounded border border-gray-200 hover:border-gray-300 focus-within:border-gray-300 hover:shadow focus-within:shadow transition duration-200"
 			>
 				<label for="find" class="icon flex items-center justify-center col-span-1 border-r border-gray-200">
 					<div class="i-mdi-magnify text-lg text-slate-500"></div>

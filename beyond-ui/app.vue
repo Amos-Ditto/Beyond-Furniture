@@ -28,4 +28,15 @@ html {
 body {
 	@apply box-border;
 }
+
+/* Page transition */
+
+.page-enter-active,
+.page-leave-active {
+	transition: all 0.3s;
+}
+.page-enter-from,
+.page-leave-to {
+	@apply opacity-0 translate-y-1;
+}
 </style>

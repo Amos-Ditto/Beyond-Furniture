@@ -7,7 +7,7 @@
 				<img src="@/assets/Img/Logo/BEYOND-removebg-preview-light.png" alt="logo" />
 			</RouterLink>
 			<div
-				class="search-bar hidden sm:grid grid-cols-8 lg:grid-cols-10 grid-rows-1 border border-gray-200 rounded bg-gray-100 py-1 hover:border-gray-300 focus-within:border-gray-300 transition duration-200"
+				class="search-bar hidden sm:grid grid-cols-8 lg:grid-cols-10 grid-rows-1 border border-gray-200 rounded bg-gray-100 py-1 hover:border-gray-300 hover:shadow focus-within:shadow focus-within:border-gray-300 transition duration-200"
 			>
 				<label for="find" class="icon col-span-1 flex items-center justify-center border-r border-gray-200 bg-gray-100">
 					<div class="i-mdi-magnify text-gray-500 text-lg scale-110"></div>

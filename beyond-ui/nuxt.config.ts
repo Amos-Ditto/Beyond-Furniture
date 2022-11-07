@@ -13,6 +13,7 @@ export default defineNuxtConfig({
 			title: "Beyond-Products",
 			meta: [{ name: "description", content: "Find and get amazing furniture products." }],
 		},
+		pageTransition: { name: "page", mode: "out-in" },
 	},
 	unocss: {
 		icons: true,
