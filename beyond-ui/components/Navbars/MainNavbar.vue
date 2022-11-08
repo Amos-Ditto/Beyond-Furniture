@@ -8,19 +8,24 @@
 		<RouterLink to="/" class="logo col-span-2">
 			<img src="@/assets/Img/Logo/BEYOND-removebg-preview-light.png" alt="logo" />
 		</RouterLink>
-		<div class="navbar-dashboard col-span-6 flex items-center justify-end gap-x-4 md:gap-x-12 lg:gap-x-16 transition duration-200">
+		<div
+			class="navbar-dashboard col-span-6 flex items-center justify-end gap-x-4 md:gap-x-12 lg:gap-x-16 transition duration-200"
+		>
 			<div
 				class="search-bar relative hidden sm:grid grid-cols-10 items-center w-[20rem] md:w-[25rem] bg-gray-100 rounded border border-gray-200 hover:border-gray-300 focus-within:border-gray-300 hover:shadow focus-within:shadow transition duration-200"
 			>
 				<label for="find" class="icon flex items-center justify-center col-span-1 border-r border-gray-200">
-					<div class="i-mdi-magnify text-lg text-slate-500"></div>
+					<!-- <div class="i-mdi-magnify text-lg text-slate-500"></div> -->
+					<UtilitiesSearchIcon :class="'w-4 h-4 scale-110'" />
 				</label>
 				<input type="search" name="find" id="find" placeholder="Search for items" />
 				<div class="search-options col-span-3 flex flex-row items-center border-l border-gray-200 px-1">
 					<button
 						class="relative flex items-center justify-start py-1.5 px-1 w-full rounded border border-transparent hover:border-gray-200"
 					>
-						<small class="tracking-wide text-xs pr-3.5 truncate capitalize font-light text-slate-600">All categories</small>
+						<small class="tracking-wide text-xs pr-3.5 truncate capitalize font-light text-slate-600"
+							>All categories</small
+						>
 						<div class="i-mdi-chevron-down text-base text-slate-600 absolute right-1"></div>
 					</button>
 				</div>
