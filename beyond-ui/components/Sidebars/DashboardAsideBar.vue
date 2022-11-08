@@ -13,10 +13,24 @@ const categories = ref<Categories[]>([
 	{ Name: "others", id: 5 },
 ]);
 // Handle categories selection
-const selectedcategory = ref<number>(0);
+const selectedcategory = ref<Categories[]>([]);
 
 const selectCategory = (payload: Categories): void => {
-	selectedcategory.value = payload.id;
+	for (let i = 0; i < selectedcategory.value.length; i++) {
+		if (selectedcategory.value[i].id === payload.id) {
+			selectedcategory.value.splice(i, 1);
+			return;
+		}
+	}
+	selectedcategory.value.push(payload);
+};
+const checkSelectedCategory = (payload: Categories): boolean => {
+	for (let i = 0; i < selectedcategory.value.length; i++) {
+		if (selectedcategory.value[i].id === payload.id) {
+			return true;
+		}
+	}
+	return false;
 };
 
 // Handle prices selection
@@ -25,6 +39,25 @@ const prices = ref<Prices[]>([
 	{ Name: "$30 - $50", id: 3 },
 	{ Name: "more than $50", id: 2 },
 ]);
+const selectedprices = ref<Prices[]>([]);
+
+const selectPrice = (payload: Prices): void => {
+	for (let i = 0; i < selectedprices.value.length; i++) {
+		if (selectedprices.value[i].id === payload.id) {
+			selectedprices.value.splice(i, 1);
+			return;
+		}
+	}
+	selectedprices.value.push(payload);
+};
+const checkSelectedPrice = (payload: Prices): boolean => {
+	for (let i = 0; i < selectedprices.value.length; i++) {
+		if (selectedprices.value[i].id === payload.id) {
+			return true;
+		}
+	}
+	return false;
+};
 </script>
 <template>
 	<aside class="col-span-2 fixed md:relative top-10 md:top-0 left-0 bottom-0 right-0 flex flex-col gap-y-3 z-20">
@@ -39,7 +72,7 @@ const prices = ref<Prices[]>([
 				>
 					<button
 						class="border border-gray-300 rounded w-5 h-5 py-1 bg-gray-50 after:text-gray-800 flex items-center justify-center after:text-xl"
-						:class="selectedcategory === category.id ? 'category-check' : ''"
+						:class="checkSelectedCategory(category) ? 'category-check' : ''"
 					></button>
 					<small class="text-sm text-gray-700 capitalize">{{ category.Name }}</small>
 				</div>
@@ -49,18 +82,19 @@ const prices = ref<Prices[]>([
 
 				<div class="prices flex flex-col gap-y-2">
 					<h3 class="text-sm font-semibold uppercase px-3.5 text-gray-700">price</h3>
-					<label for="less">
-						<input type="checkbox" name="less" id="less" />
-						<small>less than $30</small>
-					</label>
-					<label for="between">
-						<input type="checkbox" name="between" id="between" />
-						<small>$30 - $50</small>
-					</label>
-					<label for="more">
-						<input type="checkbox" name="more" id="more" />
-						<small>more than $50</small>
-					</label>
+
+					<div
+						class="price w-full px-6 md:px-4 py-2 flex flex-row items-center gap-x-4 hover:bg-gray-200 transition duration-200 cursor-pointer selection:bg-gray-200 text-gray-700"
+						v-for="price in prices"
+						:key="price.id"
+						@click="selectPrice(price)"
+					>
+						<button
+							class="border border-gray-300 rounded w-4 h-4 py-1 bg-gray-50 after:text-gray-800 flex items-center justify-center after:text-xl"
+							:class="checkSelectedPrice(price) ? 'category-check' : ''"
+						></button>
+						<small class="text-sm text-gray-700 capitalize">{{ price.Name }}</small>
+					</div>
 				</div>
 				<div class="colors py-2 flex flex-col gap-y-2">
 					<h3 class="text-sm font-semibold uppercase px-3.5 text-gray-700">colors</h3>
@@ -110,7 +144,7 @@ const prices = ref<Prices[]>([
 				>
 					<button
 						class="border border-gray-300 rounded w-5 h-5 py-1 bg-gray-50 after:text-gray-800 flex items-center justify-center after:text-xl"
-						:class="selectedcategory === category.id ? 'category-check' : ''"
+						:class="checkSelectedCategory(category) ? 'category-check' : ''"
 					></button>
 					<small class="text-sm text-gray-700 capitalize">{{ category.Name }}</small>
 				</div>
@@ -120,18 +154,18 @@ const prices = ref<Prices[]>([
 
 				<div class="prices flex flex-col gap-y-2">
 					<h3 class="text-sm font-semibold uppercase px-5 text-gray-700">price</h3>
-					<label for="less">
-						<input type="checkbox" name="less" id="less" />
-						<small>less than $30</small>
-					</label>
-					<label for="between">
-						<input type="checkbox" name="between" id="between" />
-						<small>$30 - $50</small>
-					</label>
-					<label for="more">
-						<input type="checkbox" name="more" id="more" />
-						<small>more than $50</small>
-					</label>
+					<div
+						class="price w-full px-6 md:px-4 py-2 flex flex-row items-center gap-x-4 hover:bg-gray-200 transition duration-200 cursor-pointer selection:bg-gray-200 text-gray-700"
+						v-for="price in prices"
+						:key="price.id"
+						@click="selectPrice(price)"
+					>
+						<button
+							class="border border-gray-300 rounded w-4 h-4 py-1 bg-gray-50 after:text-gray-800 flex items-center justify-center after:text-xl"
+							:class="checkSelectedPrice(price) ? 'category-check' : ''"
+						></button>
+						<small class="text-sm text-gray-700 capitalize">{{ price.Name }}</small>
+					</div>
 				</div>
 				<div class="colors py-2 flex flex-col gap-y-2">
 					<h3 class="text-sm font-semibold uppercase px-5 text-gray-700">colors</h3>
