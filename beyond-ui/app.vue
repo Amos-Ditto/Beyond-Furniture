@@ -41,4 +41,12 @@ body {
 .page-leave-to {
 	@apply opacity-0;
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+	transition: background-color 600000s 0s, color 600000s 0s;
+}
+input[data-autocompleted] {
+	background-color: transparent !important;
+}
 </style>

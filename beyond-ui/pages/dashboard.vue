@@ -1,3 +1,18 @@
+<script setup lang="ts">
+const loadingitems = ref<boolean>(false);
+
+const onCreatedLoadItems = (): void => {
+	loadingitems.value = true;
+	setTimeout(() => {
+		loadingitems.value = false;
+	}, 800);
+};
+onCreatedLoadItems();
+
+const applyFilters = (): void => {
+	onCreatedLoadItems();
+};
+</script>
 <template>
 	<NuxtLayout name="dashboard">
 		<section class="w-full flex flex-col gap-y-3 pb-8">
@@ -10,18 +25,34 @@
 			</header>
 			<section class="px-2 sm:px-4 md:px-12 lg:px-24 xl:px-36 2xl:px-40 flex flex-col gap-y-6 transition-all duration-200">
 				<main class="grid grid-cols-10 gap-x-5 lg:gap-x-10 py-3">
-					<SidebarsDashboardAsideBar />
+					<SidebarsDashboardAsideBar @apply-filters="applyFilters" />
 					<section class="flex flex-col gap-y-2 col-span-10 md:col-span-8">
-						<div
-							class="items-body grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-12 px-4 sm:px-0 py-4 sm:py-0"
-						>
-							<CardsDashboardItem :bg="'bg-amber-100'" />
-							<CardsDashboardItem :bg="'bg-indigo-100'" />
-							<CardsDashboardItem :bg="'bg-cyan-100'" />
-							<CardsDashboardItem :bg="'bg-indigo-100'" />
-							<CardsDashboardItem :bg="'bg-amber-100'" />
-							<CardsDashboardItem :bg="'bg-cyan-100'" />
-							<CardsDashboardItem :bg="'bg-indigo-100'" />
+						<div class="flex flex-col w-full gap-y-10">
+							<Transition mode="out-in">
+								<div
+									v-if="loadingitems"
+									class="items-body grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-12 px-4 sm:px-0 py-4 sm:py-0"
+								>
+									<SuspensesDashboardItemSuspense />
+									<SuspensesDashboardItemSuspense />
+									<SuspensesDashboardItemSuspense />
+									<SuspensesDashboardItemSuspense />
+									<SuspensesDashboardItemSuspense />
+									<SuspensesDashboardItemSuspense />
+								</div>
+								<div
+									v-else
+									class="items-body grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-12 px-4 sm:px-0 py-4 sm:py-0"
+								>
+									<CardsDashboardItem :bg="'bg-amber-100'" />
+									<CardsDashboardItem :bg="'bg-indigo-100'" />
+									<CardsDashboardItem :bg="'bg-cyan-100'" />
+									<CardsDashboardItem :bg="'bg-indigo-100'" />
+									<CardsDashboardItem :bg="'bg-amber-100'" />
+									<CardsDashboardItem :bg="'bg-cyan-100'" />
+									<CardsDashboardItem :bg="'bg-indigo-100'" />
+								</div>
+							</Transition>
 						</div>
 					</section>
 				</main>

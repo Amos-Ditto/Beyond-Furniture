@@ -1,24 +1,48 @@
+<script setup lang="ts">
+import { Categories, Prices } from "~~/Types/common";
+
+const emits = defineEmits<{
+	(e: "applyFilters"): void;
+}>();
+
+const categories = ref<Categories[]>([
+	{ Name: "Living Room", id: 1 },
+	{ Name: "Bed Room", id: 2 },
+	{ Name: "kitchen Dining", id: 3 },
+	{ Name: "Office Furniture", id: 4 },
+	{ Name: "others", id: 5 },
+]);
+// Handle categories selection
+const selectedcategory = ref<number>(0);
+
+const selectCategory = (payload: Categories): void => {
+	selectedcategory.value = payload.id;
+};
+
+// Handle prices selection
+const prices = ref<Prices[]>([
+	{ Name: "less than $30", id: 1 },
+	{ Name: "$30 - $50", id: 3 },
+	{ Name: "more than $50", id: 2 },
+]);
+</script>
 <template>
 	<aside class="col-span-2 fixed md:relative top-10 md:top-0 left-0 bottom-0 right-0 flex flex-col gap-y-3 z-20">
 		<div class="desktop-side hidden md:flex flex-col gap-y-6 rounded h-auto py-2">
 			<div class="categories flex flex-col gap-y-2">
 				<h3 class="text-lg tracking-wide font-semibold capitalize px-3.5">categories</h3>
-				<label for="living">
-					<input type="checkbox" name="living" id="living" />
-					<small>Living Room</small>
-				</label>
-				<label for="bedroom">
-					<input type="checkbox" name="bedroom" id="bedroom" />
-					<small>Bed Room</small>
-				</label>
-				<label for="kitchen">
-					<input type="checkbox" name="kitchen" id="kitchen" />
-					<small>kitchen</small>
-				</label>
-				<label for="others">
-					<input type="checkbox" name="others" id="others" />
-					<small>others</small>
-				</label>
+				<div
+					class="w-full px-5 md:px-3.5 py-2 flex flex-row items-center gap-x-4 hover:bg-gray-200 transition duration-200 cursor-pointer selection:bg-gray-200 text-gray-700"
+					v-for="category in categories"
+					:key="category.id"
+					@click="selectCategory(category)"
+				>
+					<button
+						class="border border-gray-300 rounded w-5 h-5 py-1 bg-gray-50 after:text-gray-800 flex items-center justify-center after:text-xl"
+						:class="selectedcategory === category.id ? 'category-check' : ''"
+					></button>
+					<small class="text-sm text-gray-700 capitalize">{{ category.Name }}</small>
+				</div>
 			</div>
 			<div class="filters flex flex-col gap-y-2 w-full">
 				<h3 class="text-lg tracking-wide font-semibold capitalize px-2">filters</h3>
@@ -67,6 +91,7 @@
 			</div>
 			<div class="apply px-3.5 pt-4 pb-2">
 				<button
+					@click="emits('applyFilters')"
 					class="text-sm tracking-wide bg-amber-600 hover:bg-amber-500 focus:bg-amber-500 text-gray-50 capitalize px-5 py-2 w-full rounded transition duration-200"
 				>
 					apply
@@ -74,25 +99,21 @@
 			</div>
 		</div>
 		<div class="toggle-side absolute md:hidden top-0 left-0 bottom-0 right-0 bg-gray-100 opacity-10 -z-10"></div>
-		<div class="mobile flex flex-col gap-y-6 md:hidden w-1/2 h-full pt-10 pb-3 bg-gray-100 overflow-y-auto">
+		<div class="mobile flex flex-col gap-y-6 md:hidden w-1/2 h-full pt-10 pb-3 bg-gray-100 overflow-y-auto shadow-xl">
 			<div class="categories flex flex-col gap-y-2">
 				<h3 class="text-lg tracking-wide font-semibold capitalize px-4">categories</h3>
-				<label for="living">
-					<input type="checkbox" name="living" id="living" />
-					<small>Living Room</small>
-				</label>
-				<label for="bedroom">
-					<input type="checkbox" name="bedroom" id="bedroom" />
-					<small>Bed Room</small>
-				</label>
-				<label for="kitchen">
-					<input type="checkbox" name="kitchen" id="kitchen" />
-					<small>kitchen</small>
-				</label>
-				<label for="others">
-					<input type="checkbox" name="others" id="others" />
-					<small>others</small>
-				</label>
+				<div
+					class="w-full px-5 md:px-3.5 py-2 flex flex-row items-center gap-x-4 hover:bg-gray-200 transition duration-200 cursor-pointer selection:bg-gray-200 text-gray-700"
+					v-for="category in categories"
+					:key="category.id"
+					@click="selectCategory(category)"
+				>
+					<button
+						class="border border-gray-300 rounded w-5 h-5 py-1 bg-gray-50 after:text-gray-800 flex items-center justify-center after:text-xl"
+						:class="selectedcategory === category.id ? 'category-check' : ''"
+					></button>
+					<small class="text-sm text-gray-700 capitalize">{{ category.Name }}</small>
+				</div>
 			</div>
 			<div class="filters flex flex-col gap-y-2 w-full">
 				<h3 class="text-lg tracking-wide font-semibold capitalize px-4">filters</h3>
@@ -139,8 +160,9 @@
 					</div>
 				</div>
 			</div>
-			<div class="apply px-5 pt-4 pb-2">
+			<div class="apply px-5 pt-4 pb-4">
 				<button
+					@click="emits('applyFilters')"
 					class="text-sm tracking-wide bg-amber-600 hover:bg-amber-500 focus:bg-amber-500 text-gray-50 capitalize px-5 py-2 w-full rounded transition duration-200"
 				>
 					apply
@@ -179,5 +201,10 @@
 .color-list label input[type="checkbox"] {
 	@apply w-8 md:w-6 h-8 md:h-6 appearance-none first:border rounded border-gray-300;
 	@apply flex items-center justify-center checked:after:content-['\2713'] checked:after:text-xl;
+}
+
+/* Selection style */
+.category-check {
+	@apply after:content-['\2713'];
 }
 </style>
