@@ -34,6 +34,15 @@ const toggleaccount = ref<boolean>(false);
 
 // Handle Cart
 const togglecart = ref<boolean>(false);
+
+const toggleAccount = (): void => {
+	togglecart.value = false;
+	toggleaccount.value = !toggleaccount.value;
+};
+const toggleCart = (): void => {
+	toggleaccount.value = false;
+	togglecart.value = !togglecart.value;
+};
 </script>
 
 <template>
@@ -67,6 +76,7 @@ const togglecart = ref<boolean>(false);
 						></div>
 					</button>
 				</div>
+
 				<NavbarsHomeSearchBarDropDown
 					:categories="categories"
 					:togglecategories="togglecategories"
@@ -78,7 +88,7 @@ const togglecart = ref<boolean>(false);
 					<div class="cart md:relative items-center flex justify-center">
 						<div
 							class="cart-icon relative rounded-full items-center flex justify-center hover:bg-gray-100 cursor-pointer p-2"
-							@click="togglecart = !togglecart"
+							@click="toggleCart"
 						>
 							<div class="i-mdi-cart-outline text-2xl scale-110 text-gray-700"></div>
 							<div class="new absolute rounded-full w-2.5 h-2.5 bg-orange-500 right-2 top-2"></div>
@@ -86,15 +96,25 @@ const togglecart = ref<boolean>(false);
 						<Transition name="drop-down">
 							<NavbarsCartDropDown v-if="togglecart" />
 						</Transition>
+						<div
+							v-if="togglecart"
+							@click="togglecart = false"
+							class="cart-toggling-container fixed top-20 left-0 right-0 bottom-0 bg-transparent"
+						></div>
 					</div>
 				</div>
 				<div class="user relative">
-					<div class="icon cursor-pointer" @click="toggleaccount = !toggleaccount">
+					<div class="icon cursor-pointer" @click="toggleAccount">
 						<img src="@/assets/Img/profile-min.svg" alt="avatar" class="w-9 h-9 bg-orange-200 rounded-full" />
 					</div>
 					<Transition name="drop-down">
 						<NavbarsAccountDropDown :toggleaccount="toggleaccount" />
 					</Transition>
+					<div
+						v-if="toggleaccount"
+						@click="toggleaccount = false"
+						class="cart-toggling-container fixed top-20 left-0 right-0 bottom-0 bg-transparent"
+					></div>
 				</div>
 			</div>
 		</div>

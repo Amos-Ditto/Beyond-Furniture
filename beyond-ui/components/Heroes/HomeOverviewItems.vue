@@ -12,7 +12,7 @@
 				/>
 			</template>
 			<template #name class="">
-				<small class="text-center font-semibold text-xl tracking-wide whitespace-pre-line capitalize text-gray-600"
+				<small class="text-center font-light text-xl tracking-wide whitespace-pre-line capitalize text-gray-600"
 					>Living couch</small
 				>
 			</template>
@@ -32,7 +32,7 @@
 				/>
 			</template>
 			<template #name class="">
-				<small class="text-center font-semibold text-xl tracking-wide whitespace-pre-line capitalize text-gray-600"
+				<small class="text-center font-light text-xl tracking-wide whitespace-pre-line capitalize text-gray-600"
 					>Natuzi chair</small
 				>
 			</template>
@@ -53,9 +53,7 @@
 				/>
 			</template>
 			<template #name class="">
-				<small class="text-center font-semibold text-xl tracking-wide whitespace-pre-line capitalize text-gray-600"
-					>3 seat sofa</small
-				>
+				<small class="text-center font-light text-xl tracking-wide whitespace-pre-line capitalize text-gray-600">3 seat sofa</small>
 			</template>
 			<template #prices>
 				<div class="prices flex flex-row px-4 items-center justify-center gap-x-4 w-full">
@@ -74,9 +72,7 @@
 				/>
 			</template>
 			<template #name class="">
-				<small class="text-center font-semibold text-xl tracking-wide whitespace-pre-line capitalize text-gray-600"
-					>Wing chair</small
-				>
+				<small class="text-center font-light text-xl tracking-wide whitespace-pre-line capitalize text-gray-600">Wing chair</small>
 			</template>
 			<template #prices>
 				<div class="prices flex flex-row px-4 items-center justify-center gap-x-4 w-full">
@@ -95,9 +91,7 @@
 				/>
 			</template>
 			<template #name class="">
-				<small class="text-center font-semibold text-xl tracking-wide whitespace-pre-line capitalize text-gray-600"
-					>couch relax</small
-				>
+				<small class="text-center font-light text-xl tracking-wide whitespace-pre-line capitalize text-gray-600">couch relax</small>
 			</template>
 			<template #prices>
 				<div class="prices flex flex-row px-4 items-center justify-center gap-x-4 w-full">
@@ -116,7 +110,7 @@
 				/>
 			</template>
 			<template #name class="">
-				<small class="text-center font-semibold text-xl tracking-wide whitespace-pre-line capitalize text-gray-600">xl bed</small>
+				<small class="text-center font-light text-xl tracking-wide whitespace-pre-line capitalize text-gray-600">xl bed</small>
 			</template>
 			<template #prices>
 				<div class="prices flex flex-row px-4 items-center justify-center gap-x-4 w-full">

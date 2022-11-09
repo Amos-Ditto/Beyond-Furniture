@@ -34,11 +34,11 @@ const selectOverviewItem = (item: OverviewItems): void => {
 		<section class="w-full px-2 sm:px-4 md:px-12 lg:px-24 xl:px-48 2xl:px-52 flex flex-col gap-y-3 transition-all duration-200">
 			<header class="flex flex-row justify-between w-full px-4 sm:px-0 pt-8">
 				<h3 class="text-3xl font-bold text-gray-800 uppercase">Products</h3>
-				<div class="categories hidden sm:grid grid-cols-3 gap-x-3 w-[70%]">
-					<div class="link flex items-center justify-center">
+				<div class="categories flex justify-end items-center sm:grid grid-cols-3 gap-x-3 w-[70%]">
+					<div class="link hidden sm:flex items-center justify-center">
 						<button class="text-lg tracking-wide text-gray-700">Best selling</button>
 					</div>
-					<div class="link flex items-center justify-center">
+					<div class="link hidden sm:flex items-center justify-center">
 						<button class="text-lg tracking-wide text-gray-700">Most popular</button>
 					</div>
 					<div class="link flex items-center justify-end">
@@ -53,7 +53,7 @@ const selectOverviewItem = (item: OverviewItems): void => {
 				</div>
 			</header>
 			<section class="w-full flex flex-col py-2 gap-y-10 sm:gap-y-6">
-				<div class="sub-links w-full flex gap-x-3 sm:gap-x-12 justify-start sm:justify-center items-center px-3 pt-6 sm:pt-10">
+				<div class="sub-links w-full flex gap-x-3 sm:gap-x-12 justify-between sm:justify-center items-center px-3 pt-6 sm:pt-10">
 					<button
 						class="sub-link"
 						:class="activeitemid === item.id ? 'border-orange-400 text-inherit' : 'border-transparent text-gray-600'"

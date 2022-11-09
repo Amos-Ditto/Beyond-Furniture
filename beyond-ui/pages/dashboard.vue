@@ -12,6 +12,12 @@ onCreatedLoadItems();
 const applyFilters = (): void => {
 	onCreatedLoadItems();
 };
+
+// Toggle side Bar
+const togglesidebar = ref<boolean>(false);
+const toggleSidebar = (payload: boolean): void => {
+	togglesidebar.value = payload;
+};
 </script>
 <template>
 	<NuxtLayout name="dashboard">
@@ -25,7 +31,11 @@ const applyFilters = (): void => {
 			</header>
 			<section class="px-2 sm:px-4 md:px-12 lg:px-24 xl:px-36 2xl:px-40 flex flex-col gap-y-6 transition-all duration-200">
 				<main class="grid grid-cols-10 gap-x-5 lg:gap-x-10 py-3">
-					<SidebarsDashboardAsideBar @apply-filters="applyFilters" />
+					<SidebarsDashboardAsideBar
+						:togglesidebar="togglesidebar"
+						@apply-filters="applyFilters"
+						@toggle-sidebar="toggleSidebar"
+					/>
 					<section class="flex flex-col gap-y-2 col-span-10 md:col-span-8">
 						<div class="flex flex-col w-full gap-y-10">
 							<Transition mode="out-in">
@@ -42,7 +52,7 @@ const applyFilters = (): void => {
 								</div>
 								<div
 									v-else
-									class="items-body grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-12 px-4 sm:px-0 py-4 sm:py-0"
+									class="items-body grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-x-2 sm:gap-x-4 gap-y-5 sm:gap-y-12 px-0.5 sm:px-0 py-4 sm:py-0"
 								>
 									<CardsDashboardItem :bg="'bg-amber-100'" />
 									<CardsDashboardItem :bg="'bg-indigo-100'" />
