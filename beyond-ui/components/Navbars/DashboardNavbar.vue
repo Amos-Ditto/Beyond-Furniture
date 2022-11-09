@@ -16,6 +16,12 @@ const chooseCategory = (payload: Categories): void => {
 	selectedcategory.value = payload;
 	togglecategories.value = !togglecategories.value;
 };
+
+// Handle Account Details
+const toggleaccount = ref<boolean>(false);
+
+// Handle Cart
+const togglecart = ref<boolean>(false);
 </script>
 <template>
 	<nav
@@ -33,9 +39,7 @@ const chooseCategory = (payload: Categories): void => {
 					<UtilitiesSearchIcon :class="'w-4 h-4 scale-110'" />
 				</label>
 				<input type="search" name="find" id="find" placeholder="search for items" />
-				<div
-					class="search-options col-span-2 lg:col-span-3 flex flex-row items-center border-l border-gray-200 px-1 bg-inherit"
-				>
+				<div class="search-options col-span-2 lg:col-span-3 flex flex-row items-center border-l border-gray-200 px-1 bg-inherit">
 					<button
 						@click="togglecategories = !togglecategories"
 						class="relative flex items-center justify-start py-1.5 px-1 w-full rounded border border-transparent hover:border-gray-200"
@@ -66,26 +70,35 @@ const chooseCategory = (payload: Categories): void => {
 				</Transition>
 			</div>
 		</div>
-		<div class="right-nav flex flex-row items-center justify-end gap-x-4 sm:gap-x-6 col-span-2 sm:col-span-1">
+		<div class="right-nav flex flex-row items-center justify-end gap-x-6 sm:gap-x-8 col-span-2 sm:col-span-1">
 			<div
 				class="search-mobile flex sm:hidden items-center justify-center p-2 bg-gray-100 hover:bg-gray-200 transition duration-200 cursor-pointer rounded-full"
 			>
 				<UtilitiesSearchIcon :class="'w-4 h-4 scale-110'" />
 			</div>
-			<div class="cart relative rounded-full items-center flex justify-center hover:bg-gray-100 cursor-pointer p-2">
-				<div class="i-mdi-cart-outline text-xl"></div>
-				<div class="new absolute rounded-full w-2 h-2 bg-orange-500 right-2 top-2"></div>
+			<div class="cart relative items-center flex justify-center">
+				<div
+					class="cart-icon relative rounded-full items-center flex justify-center hover:bg-gray-100 cursor-pointer p-2"
+					@click="togglecart = !togglecart"
+				>
+					<div class="i-mdi-cart-outline text-2xl scale-110 text-gray-700"></div>
+					<div class="new absolute rounded-full w-2.5 h-2.5 bg-orange-500 right-2 top-2"></div>
+				</div>
+				<Transition name="drop-down">
+					<NavbarsCartDropDown v-if="togglecart" />
+				</Transition>
 			</div>
-			<div
-				class="push-notification relative items-center flex justify-center hover:bg-gray-100 cursor-pointer p-2 rounded-full"
-			>
+			<!-- <div class="push-notification relative items-center flex justify-center hover:bg-gray-100 cursor-pointer p-2 rounded-full">
 				<div class="i-mdi-bell-outline text-xl"></div>
 				<div class="new absolute rounded-full w-2 h-2 bg-orange-500 right-2 top-2"></div>
-			</div>
-			<div class="user">
-				<div class="icon cursor-pointer">
+			</div> -->
+			<div class="user relative">
+				<div class="icon cursor-pointer" @click="toggleaccount = !toggleaccount">
 					<img src="@/assets/Img/profile-min.svg" alt="avatar" class="w-9 h-9 bg-orange-200 rounded-full" />
 				</div>
+				<Transition name="drop-down">
+					<NavbarsAccountDropDown :toggleaccount="toggleaccount" />
+				</Transition>
 			</div>
 		</div>
 	</nav>

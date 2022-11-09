@@ -15,7 +15,7 @@
 }
 
 html {
-	font-family: "Roboto", "Arial", Tahoma;
+	font-family: "Mulish", Arial, sans-serif;
 	font-synthesis: none;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
