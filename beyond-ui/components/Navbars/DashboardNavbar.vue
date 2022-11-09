@@ -1,5 +1,8 @@
 <script setup lang="ts">
+import { useSearchStore } from "@/store/searchStore";
 import { Categories } from "~~/Types/common";
+
+const searchstore = useSearchStore();
 
 const categories = ref<Categories[]>([
 	{ Name: "all categories", id: 6 },
@@ -9,7 +12,20 @@ const categories = ref<Categories[]>([
 	{ Name: "Office Furniture", id: 4 },
 	{ Name: "others", id: 5 },
 ]);
+
+if (searchstore.categories.length === 0) {
+	searchstore.updateCategories(categories.value);
+}
+
 const selectedcategory = ref<Categories>({ Name: "all categories", id: 6 });
+const searchdata = ref<string>("");
+// Check if already there is placed search value
+
+if (searchstore.selectedcategory.id !== 0) {
+	selectedcategory.value = searchstore.selectedcategory;
+	searchdata.value = searchstore.searchdata;
+}
+
 const togglecategories = ref<boolean>(false);
 
 const chooseCategory = (payload: Categories): void => {
@@ -38,7 +54,7 @@ const togglecart = ref<boolean>(false);
 					<!-- <div class="i-mdi-magnify text-gray-500 text-lg scale-110"></div> -->
 					<UtilitiesSearchIcon :class="'w-4 h-4 scale-110'" />
 				</label>
-				<input type="search" name="find" id="find" placeholder="search for items" />
+				<input type="search" name="find" id="find" placeholder="search for items" v-model="searchdata" />
 				<div class="search-options col-span-2 lg:col-span-3 flex flex-row items-center border-l border-gray-200 px-1 bg-inherit">
 					<button
 						@click="togglecategories = !togglecategories"
@@ -53,21 +69,11 @@ const togglecart = ref<boolean>(false);
 						></div>
 					</button>
 				</div>
-				<Transition name="drop-down">
-					<div
-						v-if="togglecategories"
-						class="search-drop-down absolute bottom-0 shadow-xl translate-y-[105%] right-0 min-w-[10rem] bg-gray-50 rounded flex flex-col py-2 gap-y-2"
-					>
-						<button
-							v-for="category in categories"
-							:key="category.id"
-							@click="chooseCategory(category)"
-							class="py-2 px-3 tracking-wide hover:bg-gray-200 focus:bg-gray-200 text-sm capitalize flex justify-start items-center"
-						>
-							{{ category.Name }}
-						</button>
-					</div>
-				</Transition>
+				<NavbarsDashboardSearchDropDown
+					:categories="categories"
+					:togglecategories="togglecategories"
+					@choose-category="chooseCategory"
+				/>
 			</div>
 		</div>
 		<div class="right-nav flex flex-row items-center justify-end gap-x-6 sm:gap-x-8 col-span-2 sm:col-span-1">
