@@ -53,6 +53,9 @@ const toggleCart = (): void => {
 		class="w-full py-4 px-2 sm:px-4 md:px-12 lg:px-24 xl:px-36 2xl:px-40 grid grid-cols-3 xl:grid-cols-2 gap-x-4 bg-gray-50 opacity-[0.95] transition-all duration-200 z-40"
 	>
 		<div class="left-nav flex flex-row items-center sm:justify-between gap-x-4 col-span-1 sm:col-span-2 xl:col-span-1">
+			<!-- <div class="toggle-side-bar px-2 flex flex-row items-center justify-center py-0.5">
+				<LazyUtilitiesMenuIcon :class="'w-8 h-8 scale-110'" />
+			</div> -->
 			<RouterLink to="/" class="logo">
 				<img src="@/assets/Img/Logo/BEYOND-removebg-preview-light.png" alt="logo" />
 			</RouterLink>

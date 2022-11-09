@@ -207,7 +207,7 @@ const checkSelectedPrice = (payload: Prices): boolean => {
 						</div>
 					</div>
 				</div>
-				<div class="apply px-5 pt-4 pb-4">
+				<div class="apply px-5 pt-4 pb-8">
 					<button
 						@click="emits('applyFilters')"
 						class="text-sm tracking-wide bg-amber-600 hover:bg-amber-500 focus:bg-amber-500 text-gray-50 capitalize px-5 py-2 w-full rounded transition duration-200"
