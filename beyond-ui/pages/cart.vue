@@ -1,8 +1,8 @@
 <template>
 	<NuxtLayout>
-		<section class="w-full py-4 px-2 sm:px-4 md:px-12 lg:px-24 xl:px-32 2xl:px-36 flex flex-col gap-y-3 transition-all duration-200">
-			<main class="grid grid-cols-10 gap-x-4">
-				<div class="items-body col-span-8 flex flex-col gap-y-0 border border-gray-200 shadow-sm rounded">
+		<section class="w-full py-6 px-2 sm:px-4 md:px-12 lg:px-24 xl:px-32 2xl:px-36 flex flex-col gap-y-3 transition-all duration-200">
+			<main class="grid grid-cols-1 md:grid-cols-10 gap-x-4 gap-y-6">
+				<div class="items-body md:col-span-7 lg:col-span-8 flex flex-col gap-y-0 border border-gray-200 shadow-sm rounded">
 					<div class="cart-details w-full border-b border-gray-200 flex flex-row items-center py-3 px-3">
 						<h3 class="text-xl tracking-wide">Cart (1)</h3>
 					</div>
@@ -18,12 +18,12 @@
 										/>
 									</div>
 									<div class="name flex flex-col gap-y-1 py-2">
-										<small class="capitalize text-lg text-gray-700 tracking-wide">Living room sofa</small>
+										<small class="capitalize text-base lg:text-lg text-gray-700 tracking-wide">Living room sofa</small>
 									</div>
 								</div>
 								<div class="prices flex flex-col items-end px-4 justify-end gap-y-2">
-									<h3 class="text-2xl tracking-wider">$30</h3>
-									<h3 class="text-gray-600 line-through text-xl tracking-wider">$40</h3>
+									<h3 class="text-xl tracking-wider">$30</h3>
+									<h3 class="text-gray-600 line-through text-lg tracking-wider">$40</h3>
 								</div>
 							</div>
 							<div class="item-footer flex flex-row justify-between px-2 py-2">
@@ -61,12 +61,12 @@
 										/>
 									</div>
 									<div class="name flex flex-col gap-y-1 py-2">
-										<small class="capitalize text-lg text-gray-700 tracking-wide">Living room sofa</small>
+										<small class="capitalize text-base lg:text-lg text-gray-700 tracking-wide">Living room sofa</small>
 									</div>
 								</div>
 								<div class="prices flex flex-col items-end px-4 justify-end gap-y-2">
-									<h3 class="text-2xl tracking-wider">$30</h3>
-									<h3 class="text-gray-600 line-through text-xl tracking-wider">$40</h3>
+									<h3 class="text-xl tracking-wider">$30</h3>
+									<h3 class="text-gray-600 line-through text-lg tracking-wider">$40</h3>
 								</div>
 							</div>
 							<div class="item-footer flex flex-row justify-between px-2 py-2">
@@ -104,12 +104,12 @@
 										/>
 									</div>
 									<div class="name flex flex-col gap-y-1 py-2">
-										<small class="capitalize text-lg text-gray-700 tracking-wide">Living room sofa</small>
+										<small class="capitalize text-base lg:text-lg text-gray-700 tracking-wide">Living room sofa</small>
 									</div>
 								</div>
 								<div class="prices flex flex-col items-end px-4 justify-end gap-y-2">
-									<h3 class="text-2xl tracking-wider">$30</h3>
-									<h3 class="text-gray-600 line-through text-xl tracking-wider">$40</h3>
+									<h3 class="text-xl tracking-wider">$30</h3>
+									<h3 class="text-gray-600 line-through text-lg tracking-wider">$40</h3>
 								</div>
 							</div>
 							<div class="item-footer flex flex-row justify-between px-2 py-2">
@@ -138,7 +138,24 @@
 						</div>
 					</div>
 				</div>
-				<div class="checkout-body flex flex-col gap-y-2 px-2 border border-gray-200 shadow-sm rounded col-span-2">checkout</div>
+				<div class="checkout-body flex flex-col gap-y-2 md:col-span-3 lg:col-span-2">
+					<div class="cart-summary px-0 border border-gray-200 shadow-sm rounded flex flex-col">
+						<div class="sum-title px-2 py-2.5 border-b border-gray-200">
+							<h3 class="text-base uppercase tracking-wider">Cart summary</h3>
+						</div>
+						<div class="total flex flex-row justify-between items-center px-2 py-2.5 border-b border-gray-200">
+							<span class="tracking-wide text-base">Total</span>
+							<span class="tracking-wider text-xl">$100</span>
+						</div>
+						<div class="checkout flex flex-row px-2 py-2.5 items-center">
+							<button
+								class="py-2 w-full bg-amber-500 hover:bg-amber-600 focus:bg-amber-600 text-gray-50 uppercase tracking-wide text-base rounded-sm shadow-md transition duration-200"
+							>
+								checkout ($100)
+							</button>
+						</div>
+					</div>
+				</div>
 			</main>
 		</section>
 	</NuxtLayout>

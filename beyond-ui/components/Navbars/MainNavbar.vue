@@ -94,7 +94,7 @@ const toggleCart = (): void => {
 							<div class="new absolute rounded-full w-2.5 h-2.5 bg-orange-500 right-2 top-2"></div>
 						</div>
 						<Transition name="drop-down">
-							<NavbarsCartDropDown v-if="togglecart" />
+							<NavbarsCartDropDown v-if="togglecart" @toggle-cart="toggleCart" />
 						</Transition>
 						<div
 							v-if="togglecart"
