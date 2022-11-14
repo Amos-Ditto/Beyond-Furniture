@@ -6,7 +6,7 @@ defineProps<{
 <template>
 	<div
 		v-if="toggleaccount"
-		class="account-drop-down border border-gray-200 absolute bottom-0 right-0 translate-y-[110%] min-w-[10rem] py-2 rounded z-20 shadow-lg bg-gray-50 flex flex-col gap-y-2"
+		class="account-drop-down border border-gray-200 absolute bottom-0 right-0 translate-y-[110%] min-w-[12rem] py-2 rounded z-20 shadow-lg bg-gray-50 flex flex-col gap-y-2"
 	>
 		<div class="account-links flex flex-col gap-y-0.5 w-full">
 			<button

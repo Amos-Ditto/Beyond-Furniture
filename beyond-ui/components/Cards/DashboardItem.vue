@@ -29,7 +29,7 @@ onMounted(() => {
 		:class="bg"
 		v-bind:class="loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'"
 	>
-		<div class="item-image w-full h-[80%] sm:h-[60%] flex items-center justify-center bg-gray-300 sm:bg-inherit">
+		<div class="item-image w-full h-[80%] sm:h-[60%] flex items-center justify-center bg-inherit">
 			<!-- <slot name="img"></slot> -->
 			<img
 				src="@/assets/Furnitures/phillip-goldsberry-fZuleEfeA1Q-unsplash-removebg-preview.png"

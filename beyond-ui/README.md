@@ -1,6 +1,9 @@
-# Nuxt 3 Minimal Starter
+<h1 align="center">Welcome to Beyond Furniture Client. 👋</h1>
 
-Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
+<p align="start">
+    <img src="https://img.shields.io/badge/node-v16.18.1-blue" />
+    <img src="https://img.shields.io/badge/Nuxt-3.0-green" />
+</p>
 
 ## Setup
 
@@ -10,33 +13,6 @@ Make sure to install the dependencies:
 # yarn
 yarn install
 
-# npm
-npm install
-
-# pnpm
-pnpm install --shamefully-hoist
+# dev server
+yarn dev
 ```
-
-## Development Server
-
-Start the development server on http://localhost:3000
-
-```bash
-npm run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Checkout the [deployment documentation](https://v3.nuxtjs.org/guide/deploy/presets) for more information.

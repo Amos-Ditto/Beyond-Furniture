@@ -86,6 +86,6 @@ const toggleSidebar = (payload: boolean): void => {
 
 <style scoped>
 .dashboard-status small {
-	@apply capitalize tracking-wide text-sm sm:text-base text-gray-600;
+	@apply capitalize tracking-wide text-base sm:text-lg text-gray-600;
 }
 </style>
