@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -22,6 +23,7 @@ INSTALLED_APPS = [
     "accounts",
     "products",
     "orders",
+    # Libraries
 ]
 
 AUTH_USER_MODEL = "accounts.User"
@@ -89,6 +91,8 @@ USE_I18N = True
 
 USE_TZ = True
 
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_URL = "/media/"
 
 STATIC_URL = "static/"
 
