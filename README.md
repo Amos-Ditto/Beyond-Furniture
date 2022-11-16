@@ -1,6 +1,10 @@
-<h1 align="center">Welcome to Beyond Furniture. 👋</h1>
+<div align='center'>
+<img src="docs/imgs/BEYOND-removebg-preview-dark.png" />
+</div>
 
-<p align="center">
+<h1 align="start">Welcome to Beyond Furniture. 👋</h1>
+
+<p align="start">
     <img alt="Python: 3.10" src="https://img.shields.io/badge/python-3.10-blue" />
     <img src="https://img.shields.io/badge/node-v16.18.1-blue" />
     <img src="https://img.shields.io/badge/Nuxt-3.0-green" />
@@ -9,8 +13,6 @@
       <img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-yellow.svg" target="_blank" />
     </a>
 </p>
-
-![Logo](docs/imgs/BEYOND-removebg-preview-dark.png)
 
 ## Overall Application Architecture
 
